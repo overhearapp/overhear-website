@@ -1,0 +1,95 @@
+{
+  "format": "custom",
+  "id": "settings",
+  "label": "Settings",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "navitems": {
+        "type": "Group",
+        "config": {
+          "label": "Navitems",
+          "repeat": true,
+          "fields": {
+            "nav_link": {
+              "type": "Link",
+              "config": {
+                "label": "Nav Link",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "select": null
+              }
+            },
+            "nav_label": {
+              "type": "Text",
+              "config": {
+                "label": "Nav Label",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "instagram_link": {
+        "type": "Link",
+        "config": {
+          "label": "Instagram Link",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "linkedin_link": {
+        "type": "Link",
+        "config": {
+          "label": "LinkedIn Link",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "facebook_link": {
+        "type": "Link",
+        "config": {
+          "label": "Facebook Link",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "logo_img": {
+        "type": "Image",
+        "config": {
+          "label": "Logo Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "logo_link": {
+        "type": "Link",
+        "config": {
+          "label": "Logo Link",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "cta_link": {
+        "type": "Link",
+        "config": {
+          "label": "CTA Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "cta_label": {
+        "type": "Text",
+        "config": {
+          "label": "CTA Label",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

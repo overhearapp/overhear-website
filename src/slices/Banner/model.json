@@ -1,0 +1,35 @@
+{
+  "id": "banner",
+  "type": "SharedSlice",
+  "name": "Banner",
+  "description": "Banner",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "banner_text": {
+          "type": "Text",
+          "config": {
+            "label": "Banner Text",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "brand_image": {
+          "type": "Image",
+          "config": {
+            "label": "Brand image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "hero",
+  "type": "SharedSlice",
+  "name": "Hero",
+  "description": "Hero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "heading_secondary": {
+          "type": "Text",
+          "config": {
+            "label": "Heading Secondary",
+            "placeholder": ""
+          }
+        },
+        "subtext": {
+          "type": "Text",
+          "config": {
+            "label": "Subtext",
+            "placeholder": ""
+          }
+        },
+        "heroimg": {
+          "type": "Image",
+          "config": {
+            "label": "Heroimg",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "google_store": {
+          "type": "Image",
+          "config": {
+            "label": "Google store",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "google_app": {
+          "type": "Link",
+          "config": {
+            "label": "Google app",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "apple_app": {
+          "type": "Link",
+          "config": {
+            "label": "Apple app",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "apple_store": {
+          "type": "Image",
+          "config": {
+            "label": "Apple store",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {
+        "testimonial": {
+          "type": "Text",
+          "config": {
+            "label": "Testimonial",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}
