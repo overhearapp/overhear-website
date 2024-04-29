@@ -25,9 +25,56 @@
             "label": "Heading Secondary",
             "placeholder": ""
           }
+        },
+        "subtext": {
+          "type": "Text",
+          "config": {
+            "label": "Subtext",
+            "placeholder": ""
+          }
+        },
+        "google_store": {
+          "type": "Image",
+          "config": {
+            "label": "Google store",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "google_app": {
+          "type": "Link",
+          "config": {
+            "label": "Google app",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "apple_store": {
+          "type": "Image",
+          "config": {
+            "label": "Apple store",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "apple_app": {
+          "type": "Link",
+          "config": {
+            "label": "Apple App",
+            "placeholder": "",
+            "select": null
+          }
         }
       },
-      "items": {}
+      "items": {
+        "testimonial": {
+          "type": "Text",
+          "config": {
+            "label": "Testimonial",
+            "placeholder": ""
+          }
+        }
+      }
     }
   ]
 }

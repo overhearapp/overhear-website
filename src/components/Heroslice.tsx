@@ -6,7 +6,7 @@ import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
 
 
 
-const Heroslice = ({ slice }: any) => {
+const Heroslice = ({ slice, showImg = true }: any) => {
 
 
   return (
@@ -65,11 +65,11 @@ const Heroslice = ({ slice }: any) => {
           </div>
         </div>
         {/* phone screenshot */}
-        <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
+        {!showImg && (<div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
 
           <PrismicNextImage className="mx-auto w-[22.875rem] max-w-full drop-shadow-xl"
             field={slice.primary.heroimg} width={726} height={923} />
-        </div>
+        </div>)}
       </div>
     </div>
 

@@ -1,5 +1,6 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import Heroslice from '../../components/Heroslice';
 
 /**
  * Props for `App`.
@@ -15,7 +16,8 @@ const App = ({ slice }: AppProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for app (variation: {slice.variation}) Slices
+      <Heroslice showImg={false} slice={slice} />
+
     </section>
   );
 };

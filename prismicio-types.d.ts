@@ -77,7 +77,7 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = HeroSlice;
+type PageDocumentDataSlicesSlice = IntroSlice | HeroSlice;
 
 /**
  * Content for Page documents
@@ -428,6 +428,71 @@ export interface AppSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   heading_secondary: prismic.KeyTextField;
+
+  /**
+   * Subtext field in *App → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: app.primary.subtext
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtext: prismic.KeyTextField;
+
+  /**
+   * Google store field in *App → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: app.primary.google_store
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  google_store: prismic.ImageField<never>;
+
+  /**
+   * Google app field in *App → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: app.primary.google_app
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  google_app: prismic.LinkField;
+
+  /**
+   * Apple store field in *App → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: app.primary.apple_store
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  apple_store: prismic.ImageField<never>;
+
+  /**
+   * Apple App field in *App → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: app.primary.apple_app
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  apple_app: prismic.LinkField;
+}
+
+/**
+ * Primary content in *App → Items*
+ */
+export interface AppSliceDefaultItem {
+  /**
+   * Testimonial field in *App → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: app.items[].testimonial
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  testimonial: prismic.KeyTextField;
 }
 
 /**
@@ -440,7 +505,7 @@ export interface AppSliceDefaultPrimary {
 export type AppSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<AppSliceDefaultPrimary>,
-  never
+  Simplify<AppSliceDefaultItem>
 >;
 
 /**
@@ -752,6 +817,171 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *Intro → Primary*
+ */
+export interface IntroSliceDefaultPrimary {
+  /**
+   * Image field in *Intro → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * image left field in *Intro → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: intro.primary.image_left
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  image_left: prismic.BooleanField;
+
+  /**
+   * Show Links field in *Intro → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: intro.primary.show_cta
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  show_cta: prismic.BooleanField;
+
+  /**
+   * Show Appstore Links field in *Intro → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: intro.primary.app_cta
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  app_cta: prismic.BooleanField;
+
+  /**
+   * Eyebrow field in *Intro → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Heading field in *Intro → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Content field in *Intro → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Google App field in *Intro → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro.primary.google_app
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  google_app: prismic.LinkField;
+
+  /**
+   * Google store field in *Intro → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro.primary.google_store
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  google_store: prismic.ImageField<never>;
+
+  /**
+   * Apple app field in *Intro → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro.primary.apple_app
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  apple_app: prismic.ImageField<never>;
+
+  /**
+   * Apple Store field in *Intro → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro.primary.apple_store
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  apple_store: prismic.LinkField;
+
+  /**
+   * Link Label field in *Intro → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro.primary.cta_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta_label: prismic.KeyTextField;
+
+  /**
+   * Link field in *Intro → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Link to page or website
+   * - **API ID Path**: intro.primary.cta_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for Intro Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IntroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<IntroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Intro*
+ */
+type IntroSliceVariation = IntroSliceDefault;
+
+/**
+ * Intro Shared Slice
+ *
+ * - **API ID**: `intro`
+ * - **Description**: Intro
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IntroSlice = prismic.SharedSlice<"intro", IntroSliceVariation>;
+
+/**
  * Primary content in *Stats → Items*
  */
 export interface StatsSliceDefaultItem {
@@ -1011,6 +1241,7 @@ declare module "@prismicio/client" {
       AlternateGridSliceDefault,
       AppSlice,
       AppSliceDefaultPrimary,
+      AppSliceDefaultItem,
       AppSliceVariation,
       AppSliceDefault,
       BannerSlice,
@@ -1028,6 +1259,10 @@ declare module "@prismicio/client" {
       HeroSliceDefaultItem,
       HeroSliceVariation,
       HeroSliceDefault,
+      IntroSlice,
+      IntroSliceDefaultPrimary,
+      IntroSliceVariation,
+      IntroSliceDefault,
       StatsSlice,
       StatsSliceDefaultItem,
       StatsSliceVariation,

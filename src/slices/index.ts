@@ -8,6 +8,7 @@ export const components = {
   banner: dynamic(() => import("./Banner")),
   benefits: dynamic(() => import("./Benefits")),
   hero: dynamic(() => import("./Hero")),
+  intro: dynamic(() => import("./Intro")),
   stats: dynamic(() => import("./Stats")),
   testimonials: dynamic(() => import("./Testimonials")),
   works: dynamic(() => import("./Works")),
