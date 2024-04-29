@@ -18,15 +18,15 @@ const Heroslice = ({ slice }: any) => {
 
           {/* hero text */}
           <div className="text-center">
-            <h1 className=" text-4xl tracking-tight font-medium leading-loose text-white sm:text-6xl">
+            <h1 className=" text-lg tracking-tight font-medium leading-loose text-white sm:text-6xl">
               {slice.primary.heading}&nbsp;
-              <span className="text-4xl font-bold text-orange-600 bg-gray-200 p-4 rounded-full">{slice.primary.heading_secondary}</span>
+              <span className="text-lg sm:text-4xl p-2 sm:p-4 font-bold text-orange-600 bg-gray-200 rounded-full">{slice.primary.heading_secondary}</span>
             </h1>
 
             <p className="mt-6 text-lg leading-8 text-gray-200">
               {slice.primary.subtext}
             </p>
-            <div className="flex justify-between items-center my-4">
+            <div className="flex flex-col md:flex-row justify-between items-center my-4">
 
 
               {

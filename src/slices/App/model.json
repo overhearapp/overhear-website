@@ -1,0 +1,33 @@
+{
+  "id": "app",
+  "type": "SharedSlice",
+  "name": "App",
+  "description": "App",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "heading_secondary": {
+          "type": "Text",
+          "config": {
+            "label": "Heading Secondary",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

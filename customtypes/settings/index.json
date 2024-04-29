@@ -6,6 +6,28 @@
   "status": true,
   "json": {
     "Main": {
+      "site_title": {
+        "type": "Text",
+        "config": {
+          "label": "Site title",
+          "placeholder": ""
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta description",
+          "placeholder": ""
+        }
+      },
+      "og_image": {
+        "type": "Image",
+        "config": {
+          "label": "OG image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "navitems": {
         "type": "Group",
         "config": {
@@ -53,23 +75,6 @@
         "type": "Link",
         "config": {
           "label": "Facebook Link",
-          "placeholder": "",
-          "allowTargetBlank": false,
-          "select": null
-        }
-      },
-      "logo_img": {
-        "type": "Image",
-        "config": {
-          "label": "Logo Image",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
-      "logo_link": {
-        "type": "Link",
-        "config": {
-          "label": "Logo Link",
           "placeholder": "",
           "allowTargetBlank": false,
           "select": null
