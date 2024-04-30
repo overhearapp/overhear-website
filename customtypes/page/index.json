@@ -17,6 +17,30 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "alternate_grid": {
+              "type": "SharedSlice"
+            },
+            "app": {
+              "type": "SharedSlice"
+            },
+            "benefits": {
+              "type": "SharedSlice"
+            },
+            "banner": {
+              "type": "SharedSlice"
+            },
+            "stats": {
+              "type": "SharedSlice"
+            },
+            "works": {
+              "type": "SharedSlice"
+            },
+            "user": {
+              "type": "SharedSlice"
+            },
+            "testimonials": {
+              "type": "SharedSlice"
+            },
             "intro": {
               "type": "SharedSlice"
             },

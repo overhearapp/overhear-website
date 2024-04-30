@@ -11,5 +11,6 @@ export const components = {
   intro: dynamic(() => import("./Intro")),
   stats: dynamic(() => import("./Stats")),
   testimonials: dynamic(() => import("./Testimonials")),
+  user: dynamic(() => import("./User")),
   works: dynamic(() => import("./Works")),
 };

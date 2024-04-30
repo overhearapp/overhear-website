@@ -77,7 +77,17 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = IntroSlice | HeroSlice;
+type PageDocumentDataSlicesSlice =
+  | AlternateGridSlice
+  | AppSlice
+  | BenefitsSlice
+  | BannerSlice
+  | StatsSlice
+  | WorksSlice
+  | UserSlice
+  | TestimonialsSlice
+  | IntroSlice
+  | HeroSlice;
 
 /**
  * Content for Page documents
@@ -1134,6 +1144,68 @@ export type TestimonialsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *User → Primary*
+ */
+export interface UserSliceDefaultPrimary {
+  /**
+   * User Image field in *User → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: user.primary.user_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  user_image: prismic.ImageField<never>;
+
+  /**
+   * Testimonial field in *User → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: user.primary.testimonial
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  testimonial: prismic.RichTextField;
+
+  /**
+   * Name field in *User → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: user.primary.name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for User Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type UserSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<UserSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *User*
+ */
+type UserSliceVariation = UserSliceDefault;
+
+/**
+ * User Shared Slice
+ *
+ * - **API ID**: `user`
+ * - **Description**: User
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type UserSlice = prismic.SharedSlice<"user", UserSliceVariation>;
+
+/**
  * Primary content in *Works → Primary*
  */
 export interface WorksSliceDefaultPrimary {
@@ -1272,6 +1344,10 @@ declare module "@prismicio/client" {
       TestimonialsSliceDefaultItem,
       TestimonialsSliceVariation,
       TestimonialsSliceDefault,
+      UserSlice,
+      UserSliceDefaultPrimary,
+      UserSliceVariation,
+      UserSliceDefault,
       WorksSlice,
       WorksSliceDefaultPrimary,
       WorksSliceVariation,
