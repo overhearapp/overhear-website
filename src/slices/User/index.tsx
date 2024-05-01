@@ -17,7 +17,7 @@ const User = ({ slice }: UserProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <div className="relative bg-white p-16 sm:p-24">
-        <div className=" border relative  bg-white rounded-l-lg rounded-lg">
+        <div className=" border relative  bg-white lg:rounded-l-lg lg:rounded-lg">
           <div className="relative px-6 pt-12 pb-16 sm:pt-16 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:px-8">
             <div className="lg:col-end-2 lg:py-32">
               <div className="mx-auto max-w-prose text-base lg:mr-auto lg:ml-0 lg:max-w-lg">
@@ -29,17 +29,17 @@ const User = ({ slice }: UserProps): JSX.Element => {
                   <PrismicRichText field={slice.primary.testimonial} />
                 </div>
 
-                <h4 className="mt-4 text-md text-gray-600">
-                  {slice.primary.name}
+                <h4 className="mt-4 text-md font-medium text-gray-600">
+                  -{slice.primary.name}
                 </h4>
 
               </div>
             </div>
           </div>
-          <div className="rounded-lg lg:absolute lg:inset-0">
+          <div className="lg:absolute lg:inset-0">
             <div className="lg:absolute lg:inset-y-0 lg:right-0 h-1200 lg:w-1/2">
               <PrismicNextImage
-                className=" h-56 w-full object-cover lg:absolute lg:h-full"
+                className=" h-full w-full object-cover lg:absolute "
                 field={slice.primary.user_image}
               />
             </div>

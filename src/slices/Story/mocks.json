@@ -1,0 +1,74 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "probably",
+				"type": "Text"
+			},
+			"subtext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Laboris irure fugiat elit."
+						}
+					}
+				]
+			},
+			"eyebrow_text": {
+				"__TYPE__": "FieldContent",
+				"value": "who",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"milestone",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "continued",
+							"type": "Text"
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "follow",
+							"type": "Text"
+						}
+					],
+					[
+						"date",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "mine",
+							"type": "Text"
+						}
+					],
+					[
+						"summary",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Reprehenderit do excepteur adipisicing irure id do dolore qui labore qui est quis."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

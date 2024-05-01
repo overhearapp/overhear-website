@@ -15,7 +15,7 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      {/* <Reviews slice={slice} index={0} slices={[]} context={undefined} /> */}
+      <Reviews slice={slice} index={0} slices={[]} context={undefined} />
     </section>
   );
 };

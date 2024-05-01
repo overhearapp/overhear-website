@@ -17,6 +17,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "booking": {
+              "type": "SharedSlice"
+            },
+            "story": {
+              "type": "SharedSlice"
+            },
+            "team": {
+              "type": "SharedSlice"
+            },
             "alternate_grid": {
               "type": "SharedSlice"
             },

@@ -30,6 +30,10 @@ const config: Config = {
           },
         },
       },
+      fontFamily: {
+        inter: ["var(--font-inter)"],
+        caveat:["var(--font-caveat)"],
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
