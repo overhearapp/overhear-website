@@ -7,7 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const SliderOne = () => {
+const SliderOne = ({ items }: any) => {
     const isMediumScreen = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
     const isSmallScreen = useMediaQuery({ maxWidth: 767 });
 

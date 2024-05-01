@@ -31,17 +31,18 @@ const Booking = ({ slice }: BookingProps): JSX.Element => {
             <div className="mx-auto mt-5 max-w-xl text-xl text-gray-300">
               <PrismicRichText field={slice.primary.subtext} />
             </div>
-            <button
-              type="button"
-              className="my-8 inline-flex items-center rounded-md border border-transparent bg-dark px-6 py-4 text-sm font-medium leading-4 text-white shadow-sm hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:ring-offset-2"
-            >
-              <PrismicNextLink field={slice.primary.booking_link}>
+            <PrismicNextLink field={slice.primary.booking_link}>
+              <button
+                type="button"
+                className="my-8 inline-flex items-center rounded-md border border-transparent bg-dark px-6 py-4 text-sm font-medium leading-4 text-white shadow-sm hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:ring-offset-2"
+              >
                 Book Now
                 <FiPhoneOutgoing className="-mr-0.5 ml-2 h-4 w-4" aria-hidden="true" />
-              </PrismicNextLink>
-            </button>
+              </button>
+            </PrismicNextLink>
           </div>
-          {/* <SliderOne /> */}
+
+          {/* <SliderOne items={slice.items} /> */}
         </div>
       </div>
 
