@@ -6,6 +6,7 @@ import { useMediaQuery } from "react-responsive";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { PrismicNextImage } from '@prismicio/next';
 
 const SliderOne = ({ items }: any) => {
     const isMediumScreen = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
@@ -45,66 +46,23 @@ const SliderOne = ({ items }: any) => {
                         />
                     </div>
                 </>
+                {
+                    items.map((item: any, index: number) => {
+                        return (
+                            <>
+                                <div className="rounded-md px-2 md:p-10">
+                                  
 
-                <>
-                    <div className="rounded-md px-2 md:p-10">
-                        <Image
-                            priority
-                            src="/images/coffe.jpeg"
-                            alt="logo"
-                            width={500}
-                            height={500}
-                            className="
-                  rounded-2xl 
-                      "
-                        />
-                    </div>
-                </>
-
-                <>
-                    <div className="rounded-md px-2 md:p-10">
-                        <Image
-                            priority
-                            src="/images/business.jpeg"
-                            alt="logo"
-                            width={500}
-                            height={500}
-                            className="
-                  rounded-2xl 
-                      "
-                        />
-                    </div>
-                </>
-
-                <>
-                    <div className="rounded-md px-2 md:p-10">
-                        <Image
-                            priority
-                            src="/images/man.jpeg"
-                            alt="logo"
-                            width={500}
-                            height={500}
-                            className="
-                  rounded-2xl 
-                      "
-                        />
-                    </div>
-                </>
-
-                <>
-                    <div className="rounded-md px-2 md:p-10">
-                        <Image
-                            priority
-                            src="/images/image-business.jpeg"
-                            alt="logo"
-                            width={500}
-                            height={500}
-                            className="
-                  rounded-2xl 
-                      "
-                        />
-                    </div>
-                </>
+                                    <PrismicNextImage field={item}
+                                    priority
+                                        width={500}
+                                        height={500} />
+                                        className="rounded-2xl"
+                                </div>
+                            </>
+                        )
+                    })
+                }
             </Slider>
         </div>
     );
