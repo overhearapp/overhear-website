@@ -3,6 +3,8 @@
 import { cn } from "@/utils/cn";
 import React, { useEffect, useState } from "react";
 
+import Image from 'next/image'
+
 function QuoteIcon(props: any) {
     return (
         <svg aria-hidden="true" width={105} height={78} {...props}>
@@ -118,7 +120,7 @@ export const InfiniteMovingCards = ({
                             </p>
 
                             <div className="overflow-hidden rounded-full bg-slate-50">
-                                <img alt="" loading="lazy" width="56" height="56" decoding="async" data-nimg="1" className="h-14 w-14 object-cover" src={item.avatar} />
+                                <Image alt="Avatar of user" loading="lazy" width={56} height={56} decoding="async" data-nimg="1" className="h-14 w-14 object-cover" src={item.avatar} />
                             </div>
                         </figcaption>
                     </li>

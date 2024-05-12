@@ -1,7 +1,7 @@
 "use client";
 
-import Slider from "react-slick";
-import Image from "next/image";
+import Slider from 'react-slick';
+
 import { useMediaQuery } from "react-responsive";
 
 import "slick-carousel/slick/slick.css";
@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { PrismicNextImage } from '@prismicio/next';
 
 const SliderOne = ({ items }: any) => {
+
     const isMediumScreen = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
     const isSmallScreen = useMediaQuery({ maxWidth: 767 });
 
@@ -32,34 +33,24 @@ const SliderOne = ({ items }: any) => {
     return (
         <div>
             <Slider {...settings}>
-                <>
-                    <div className="rounded-md px-2 md:p-10">
-                        <Image
-                            priority
-                            src="/images/business.jpeg"
-                            alt="logo"
-                            width={500}
-                            height={500}
-                            className="
-                  rounded-2xl
-                      "
-                        />
-                    </div>
-                </>
+
                 {
                     items.map((item: any, index: number) => {
-                        return (
-                            <>
-                                <div className="rounded-md px-2 md:p-10">
-                                  
 
-                                    <PrismicNextImage field={item}
+                        return (
+
+                            <div key={index} className="rounded-md px-2 md:p-10">
+
+
+                                <PrismicNextImage field={item.image}
                                     priority
-                                        width={500}
-                                        height={500} />
-                                        className="rounded-2xl"
-                                </div>
-                            </>
+                                    width={500}
+                                    height={1000}
+                                    className="rounded-2xl"
+                                />
+
+                            </div>
+
                         )
                     })
                 }

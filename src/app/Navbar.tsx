@@ -52,13 +52,13 @@ export default function Navbar({
           {navitems.map(({ nav_link, nav_label }) => {
 
             return (
-              <PrismicNextLink key={nav_label} field={nav_link} className="text-sm font-semibold leading-6 text-white" >
+              <PrismicNextLink key={nav_label} field={nav_link} className="text-sm font-semibold leading-6 text-white hover:text-accent" >
                 {nav_label}
               </PrismicNextLink>)
           })}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <PrismicNextLink field={cta_link} className="bg-white hover:bg-primary-700 text-primary font-bold py-2 px-4 rounded-full">
+          <PrismicNextLink field={cta_link} className="bg-white text-primary font-bold py-2 px-4 rounded-full hover:bg-accent hover:text-white transition-all duration-300">
             {cta_label}
           </PrismicNextLink>
         </div>

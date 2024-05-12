@@ -3,11 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"title": {
-				"__TYPE__": "FieldContent",
-				"value": "wrapped",
-				"type": "Text"
-			},
 			"content": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
@@ -19,18 +14,6 @@
 					}
 				]
 			},
-			"page_link": {
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "http://google.com"
-				}
-			},
-			"link_label": {
-				"__TYPE__": "FieldContent",
-				"value": "easy",
-				"type": "Text"
-			},
 			"video": {
 				"__TYPE__": "LinkContent",
 				"value": {
@@ -41,6 +24,129 @@
 					"size": "0",
 					"__TYPE__": "FileLink"
 				}
+			},
+			"video_left": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"show_links": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"app_cta": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "guess",
+				"type": "Text"
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Pariatur ex enim anim ullamco ullamco sint duis eu quis nulla ipsum. Et consequat ullamco dolore ad ullamco minim ullamco in officia anim mollit aute non occaecat."
+						}
+					}
+				]
+			},
+			"cta_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
+			},
+			"cta_label": {
+				"__TYPE__": "FieldContent",
+				"value": "push",
+				"type": "Text"
+			},
+			"google_app": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
+			},
+			"google_store": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+					"width": 4172,
+					"height": 4000
+				},
+				"url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+				"width": 4172,
+				"height": 4000,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"apple_app": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com"
+				}
+			},
+			"apple_store": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
+					"width": 3958,
+					"height": 3958
+				},
+				"url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
+				"width": 3958,
+				"height": 3958,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"preview_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
+					"width": 4024,
+					"height": 4024
+				},
+				"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
+				"width": 4024,
+				"height": 4024,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
 			}
 		},
 		"items": []

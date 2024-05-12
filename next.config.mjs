@@ -7,6 +7,16 @@ const nextConfig = {
                 hostname: 'overhear.cdn.prismic.io',
 
             },
+            {
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
+
+            },
+            {
+                protocol: 'https',
+                hostname: 'images.prismic.io',
+
+            },
         ],
     },
 };

@@ -1,4 +1,5 @@
 import { Content, FilledLinkToMediaField } from "@prismicio/client";
+import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 import { SliceComponentProps } from "@prismicio/react";
 import { PrismicRichText } from '@prismicio/react'
 
@@ -13,66 +14,79 @@ export type WorksProps = SliceComponentProps<Content.WorksSlice>;
  */
 const Works = ({ slice }: WorksProps): JSX.Element => {
   const video = slice.primary.video as FilledLinkToMediaField;
+  const { video_left, preview_image, show_links, app_cta, eyebrow, heading, content, google_app, google_store,
+    apple_app, apple_store, cta_label, cta_link
+  } = slice.primary
 
   return (
-    <div className="overflow-hidden bg-primary py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl md:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
-          <div className="px-6 lg:px-0 lg:pt-4 lg:pr-4">
-            <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
-              <div className="mt-24 sm:mt-32 lg:mt-16">
-                <a href="#" className="inline-flex space-x-6">
-                  <span className="rounded-full bg-white px-3 py-1 text-sm font-semibold leading-6 text-primary ring-1 ring-inset ring-indigo-600/10">
-                    How it works
-                  </span>
+    <div className="relative bg-primary py-16 sm:py-24">
+      <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:items-start lg:gap-24 lg:px-8">
+        <div className={`${video_left ? '' : 'order-last'} relative sm:py-16 lg:py-0`}>
 
-                </a>
-              </div>
-              <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                {slice.primary.title}
-              </p>
+          <div className="relative mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-none lg:px-0 lg:py-20">
+            {/* video card*/}
 
-              <h2 className="mt-6 text-lg leading-8 text-white">
-                <PrismicRichText field={slice.primary.content}
-                />
-              </h2>
+            <video
+              className="rounded-2xl h-full w-full object-cover"
+              width={550}
+              height={1000}
+              controls
+              poster={preview_image.url || '/'}
 
-              <div className="mt-10 flex items-center gap-x-6">
+            >
+              <source src={video.url} type='video/mp4' />
+              Your browser does not support the video tag
+            </video>
 
-                <a href="#" className="text-base font-semibold leading-7 text-white">
-                  {slice.primary.link_label} <span aria-hidden="true">→</span>
-                </a>
-              </div>
-            </div>
+
+
+
+
+
           </div>
-          <div className="sm:px-6 lg:px-0">
-            <div className="relative isolate overflow-hidden bg-blue-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pt-16 sm:pl-16 sm:pr-0 lg:mx-0 lg:max-w-none">
-              <div
-                className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-inset ring-white"
-                aria-hidden="true"
-              />
-              <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+        </div>
 
-                <video
-                  width={580}
-                  preload='none'
-                  height={300}
-                  controls
-                  className="w-[57rem] rounded-tl-xl bg-gray-800 ring-1 ring-white/10"
-                  src={video.url}  >
-
-
-                </video>
-              </div>
-              <div
-                className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/10 sm:rounded-3xl"
-                aria-hidden="true"
-              />
+        <div className=" relative mx-auto max-w-md px-6 sm:max-w-3xl lg:px-0">
+          {/* Content area */}
+          <div className="pt-12 sm:pt-16 lg:pt-20">
+            <p className="inline-block mb-4 rounded-full bg-white px-3 py-1 text-sm font-semibold leading-6 text-primary  ring-1 ring-inset ring-indigo-600/10">
+              {eyebrow}
+            </p>
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              <PrismicRichText field={heading} />
+            </h2>
+            <div className="mt-6 space-y-6 text-gray-300 text-base leading-7">
+              <PrismicRichText field={content} />
             </div>
+
+            {/* CTA section */}
+            {!show_links ? '' :
+              app_cta ? (<div className="mt-10 flex items-center justify-start gap-x-6">
+                <PrismicNextLink field={google_app as any}
+                >
+                  <PrismicNextImage field={google_store as any} width={202} height={60} />
+                </PrismicNextLink>
+                <PrismicNextLink field={apple_app as any}
+                >
+                  <PrismicNextImage field={apple_store as any} width={180} height={60} />
+                </PrismicNextLink>
+
+              </div>) : (
+                <div className="mt-10">
+                  <PrismicNextLink field={cta_link} className="text-base font-medium text-white">
+                    {cta_label}
+                    <span aria-hidden="true"> &rarr;</span>
+                  </PrismicNextLink>
+                </div>
+              )
+            }
+
+
+
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

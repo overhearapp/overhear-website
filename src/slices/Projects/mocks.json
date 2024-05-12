@@ -1,0 +1,90 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"eyebrow_text": {
+				"__TYPE__": "FieldContent",
+				"value": "hide",
+				"type": "Text"
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cillum officia minim irure ullamco ad velit incididunt laboris. Officia fugiat sunt aliquip. Fugiat velit voluptate in id ex."
+						}
+					}
+				]
+			},
+			"subtext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nulla consectetur duis anim in. Aliquip ea ut magna fugiat minim sunt adipisicing Lorem cupidatat. Irure laborum fugiat do enim sunt voluptate minim voluptate non dolor minim."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"project_title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "boat",
+							"type": "Text"
+						}
+					],
+					[
+						"project_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Aliquip ea quis duis labore fugiat veniam reprehenderit irure excepteur officia aliquip aute. Aliqua velit magna elit ut sunt irure veniam ea do pariatur fugiat reprehenderit nisi."
+									}
+								}
+							]
+						}
+					],
+					[
+						"image",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
+								"width": 3199,
+								"height": 3199
+							},
+							"url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
+							"width": 3199,
+							"height": 3199,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			}
+		]
+	}
+]

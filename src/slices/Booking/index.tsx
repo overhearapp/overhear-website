@@ -2,7 +2,7 @@ import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
 import { FiPhoneOutgoing } from "react-icons/fi";
-import SliderOne from '../../components/Slider';
+import SliderOne from '../../components/SliderOne';
 import { PrismicNextLink } from '@prismicio/next';
 /**
  * Props for `Booking`.
@@ -13,6 +13,7 @@ export type BookingProps = SliceComponentProps<Content.BookingSlice>;
  * Component for "Booking" Slices.
  */
 const Booking = ({ slice }: BookingProps): JSX.Element => {
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -42,7 +43,7 @@ const Booking = ({ slice }: BookingProps): JSX.Element => {
             </PrismicNextLink>
           </div>
 
-          {/* <SliderOne items={slice.items} /> */}
+          <SliderOne items={slice.items} />
         </div>
       </div>
 

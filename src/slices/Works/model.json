@@ -12,11 +12,63 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "title": {
+        "video": {
+          "type": "Link",
+          "config": {
+            "label": "Video",
+            "placeholder": "",
+            "select": "media"
+          }
+        },
+        "video_left": {
+          "type": "Boolean",
+          "config": {
+            "label": "Video left",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "show_links": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show links",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "app_cta": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show app store links",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "preview_image": {
+          "type": "Image",
+          "config": {
+            "label": "Video preview image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "eyebrow": {
           "type": "Text",
           "config": {
-            "label": "Title",
+            "label": "Eyebrow",
             "placeholder": ""
+          }
+        },
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
         "content": {
@@ -28,27 +80,52 @@
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "page_link": {
+        "google_app": {
           "type": "Link",
           "config": {
-            "label": "Page link",
+            "label": "Google app",
             "placeholder": "",
             "select": null
           }
         },
-        "link_label": {
+        "google_store": {
+          "type": "Image",
+          "config": {
+            "label": "Google store",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "apple_app": {
+          "type": "Link",
+          "config": {
+            "label": "Apple app",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "apple_store": {
+          "type": "Image",
+          "config": {
+            "label": "Apple store",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "cta_label": {
           "type": "Text",
           "config": {
             "label": "Link label",
             "placeholder": ""
           }
         },
-        "video": {
+        "cta_link": {
           "type": "Link",
           "config": {
-            "label": "Video",
+            "label": "Link",
             "placeholder": "",
-            "select": "media"
+            "allowTargetBlank": false,
+            "select": null
           }
         }
       },
