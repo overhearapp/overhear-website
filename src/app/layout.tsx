@@ -2,8 +2,8 @@ import type { Metadata, ResolvingMetadata } from 'next'
 
 import { Inter, Caveat } from "next/font/google";
 import "./globals.css";
-import { createClient } from '@/prismicio';
-
+import { createClient, repositoryName } from '@/prismicio';
+import { PrismicPreview } from '@prismicio/next'
 import Footer from './Footer';
 import Header from '../components/Header';
 
@@ -47,6 +47,7 @@ export default async function RootLayout({
         {children}
         <Footer />
       </body>
+      <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
 }
