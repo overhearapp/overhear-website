@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "blog_index": {
+              "type": "SharedSlice"
+            },
             "calendly": {
               "type": "SharedSlice"
             },

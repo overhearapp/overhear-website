@@ -15,7 +15,7 @@ export type BenefitsProps = SliceComponentProps<Content.BenefitsSlice>;
  */
 const Benefits = ({ slice }: BenefitsProps): JSX.Element => {
   return (
-    <div className="rounded-md flex flex-col antialiased bg-primary  bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <section className="rounded-md flex flex-col antialiased bg-primary  bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       <div className="mt-24 sm:mt-32 lg:mt-16">
         <a href="#" className="inline-flex space-x-6">
           <span className="rounded-full bg-white px-3 py-1 text-sm font-semibold leading-6 text-primary ring-1 ring-inset ring-indigo-600/10">
@@ -42,7 +42,7 @@ const Benefits = ({ slice }: BenefitsProps): JSX.Element => {
 
       </div>
 
-    </div>
+    </section>
   );
 };
 
