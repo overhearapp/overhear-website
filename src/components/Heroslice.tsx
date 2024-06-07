@@ -20,7 +20,7 @@ const Heroslice = ({ slice, showImg = true }: any) => {
           <div className="text-center">
             <h1 className=" text-lg tracking-tight font-medium leading-loose text-white sm:text-6xl">
               {slice.primary.heading}&nbsp;
-              <span className="text-lg sm:text-6xl p-2 sm:p-4 font-bold text-orange-600 bg-gray-200 rounded-full">{slice.primary.heading_secondary}</span>
+              <span className="text-lg sm:text-6xl p-2 sm:p-4 font-bold text-blue-600 bg-gray-200 rounded-full">{slice.primary.heading_secondary}</span>
             </h1>
 
             <p className="mt-6 text-lg leading-8 text-gray-200">
