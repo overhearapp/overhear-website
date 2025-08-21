@@ -24,19 +24,7 @@ const Heroslice = ({ slice, showImg = true }: any) => {
               OVERHEAR
             </h1>
 
-            {/* Subtitle */}
-            {slice.primary.subtitle && (
-              <p className="text-xl sm:text-2xl text-white opacity-90 mb-8">
-                {slice.primary.subtitle}
-              </p>
-            )}
 
-            {/* Description */}
-            {slice.primary.description && (
-              <p className="text-lg leading-8 text-white opacity-80 mb-8">
-                {slice.primary.description}
-              </p>
-            )}
 
             {/* App store badges */}
             <div className="mt-10 flex items-center justify-center gap-x-6">

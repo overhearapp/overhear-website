@@ -20,20 +20,6 @@
             "thumbnails": []
           }
         },
-        "subtitle": {
-          "type": "Text",
-          "config": {
-            "label": "Subtitle",
-            "placeholder": "Discover poetry and stories in the places they belong"
-          }
-        },
-        "description": {
-          "type": "Text",
-          "config": {
-            "label": "Description",
-            "placeholder": "Experience geolocated audio content that brings stories to life in their natural setting"
-          }
-        },
         "heroimg": {
           "type": "Image",
           "config": {

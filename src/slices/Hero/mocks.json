@@ -42,6 +42,7 @@
 				"thumbnails": {}
 			},
 			"google_app": {
+				"key": "10a7ec9b-4aa3-420d-aa5b-93666c13fe6e",
 				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
@@ -49,6 +50,7 @@
 				}
 			},
 			"apple_app": {
+				"key": "d154fe7d-66af-4b66-81ea-10110e5f7d06",
 				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",

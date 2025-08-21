@@ -1409,26 +1409,6 @@ export interface HeroSliceDefaultPrimary {
   logo_image: prismic.ImageField<never>;
 
   /**
-   * Subtitle field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Discover poetry and stories in the places they belong
-   * - **API ID Path**: hero.default.primary.subtitle
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  subtitle: prismic.KeyTextField;
-
-  /**
-   * Description field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Experience geolocated audio content that brings stories to life in their natural setting
-   * - **API ID Path**: hero.default.primary.description
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  description: prismic.KeyTextField;
-
-  /**
    * Hero Image field in *Hero → Default → Primary*
    *
    * - **Field Type**: Image
