@@ -1,0 +1,38 @@
+{
+  "id": "artist_gallery",
+  "type": "SharedSlice",
+  "name": "ArtistGallery",
+  "description": "Artist Gallery - Fetches artist data from external API",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default variation for artist gallery",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": "Meet Our Artists"
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": "The creative minds behind OVERHEAR"
+          }
+        },
+        "background_color": {
+          "type": "Color",
+          "config": {
+            "label": "Background Color"
+          }
+        }
+      }
+    }
+  ]
+}

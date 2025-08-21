@@ -168,6 +168,8 @@ export type BlogPostDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | ArtistGallerySlice
+  | ContentSectionSlice
   | MobileAppInterfaceShowcaseSlice
   | IntroSlice
   | AppSlice
@@ -748,6 +750,71 @@ type AppSliceVariation = AppSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slices
  */
 export type AppSlice = prismic.SharedSlice<"app", AppSliceVariation>;
+
+/**
+ * Primary content in *ArtistGallery → Default → Primary*
+ */
+export interface ArtistGallerySliceDefaultPrimary {
+  /**
+   * Title field in *ArtistGallery → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Meet Our Artists
+   * - **API ID Path**: artist_gallery.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Subtitle field in *ArtistGallery → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: The creative minds behind OVERHEAR
+   * - **API ID Path**: artist_gallery.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Background Color field in *ArtistGallery → Default → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: artist_gallery.default.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  background_color: prismic.ColorField;
+}
+
+/**
+ * Default variation for ArtistGallery Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation for artist gallery
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ArtistGallerySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ArtistGallerySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ArtistGallery*
+ */
+type ArtistGallerySliceVariation = ArtistGallerySliceDefault;
+
+/**
+ * ArtistGallery Shared Slice
+ *
+ * - **API ID**: `artist_gallery`
+ * - **Description**: Artist Gallery - Fetches artist data from external API
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ArtistGallerySlice = prismic.SharedSlice<
+  "artist_gallery",
+  ArtistGallerySliceVariation
+>;
 
 /**
  * Primary content in *Banner → Default → Primary*
@@ -2754,6 +2821,10 @@ declare module "@prismicio/client" {
       AppSliceDefaultItem,
       AppSliceVariation,
       AppSliceDefault,
+      ArtistGallerySlice,
+      ArtistGallerySliceDefaultPrimary,
+      ArtistGallerySliceVariation,
+      ArtistGallerySliceDefault,
       BannerSlice,
       BannerSliceDefaultPrimary,
       BannerSliceDefaultItem,

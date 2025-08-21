@@ -11,6 +11,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "artist_gallery": {
+              "type": "SharedSlice"
+            },
+            "content_section": {
+              "type": "SharedSlice"
+            },
             "mobile_app_interface_showcase": {
               "type": "SharedSlice"
             },

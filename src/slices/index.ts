@@ -19,6 +19,7 @@ export const components = {
   mobile_app_interface_showcase: dynamic(
     () => import("./MobileAppInterfaceShowcase"),
   ),
+  artist_gallery: dynamic(() => import("./ArtistGallery")),
   projects: dynamic(() => import("./Projects")),
   services: dynamic(() => import("./Services")),
   stats: dynamic(() => import("./Stats")),
