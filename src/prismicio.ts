@@ -44,8 +44,6 @@ export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
 
   prismicNext.enableAutoPreviews({
     client,
-    previewData: config.previewData as any,
-    req: config.req as any,
   });
 
   return client;
