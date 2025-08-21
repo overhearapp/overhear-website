@@ -19,7 +19,7 @@ const StarRating = () => (
 // Quote Icon Component
 const QuoteIcon = ({ className = "" }: { className?: string }) => (
   <div className={`text-2xl font-bold mb-2 text-center ${className}`}>
-    "
+    &ldquo;
   </div>
 );
 

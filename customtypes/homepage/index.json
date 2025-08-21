@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "mobile_app_interface_showcase": {
+              "type": "SharedSlice"
+            },
             "intro": {
               "type": "SharedSlice"
             },

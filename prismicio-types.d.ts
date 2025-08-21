@@ -168,6 +168,7 @@ export type BlogPostDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | MobileAppInterfaceShowcaseSlice
   | IntroSlice
   | AppSlice
   | TeamSlice
@@ -1742,6 +1743,90 @@ type IntroSliceVariation = IntroSliceDefault;
 export type IntroSlice = prismic.SharedSlice<"intro", IntroSliceVariation>;
 
 /**
+ * Item in *MobileAppInterfaceShowcase → Default → Primary → Device Screens*
+ */
+export interface MobileAppInterfaceShowcaseSliceDefaultPrimaryDevicesItem {
+  /**
+   * Screenshot Image field in *MobileAppInterfaceShowcase → Default → Primary → Device Screens*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mobile_app_interface_showcase.default.primary.devices[].screenshot
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  screenshot: prismic.ImageField<never>;
+
+  /**
+   * Screen Label field in *MobileAppInterfaceShowcase → Default → Primary → Device Screens*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mobile_app_interface_showcase.default.primary.devices[].label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *MobileAppInterfaceShowcase → Default → Primary*
+ */
+export interface MobileAppInterfaceShowcaseSliceDefaultPrimary {
+  /**
+   * Background Color field in *MobileAppInterfaceShowcase → Default → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mobile_app_interface_showcase.default.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  background_color: prismic.ColorField;
+
+  /**
+   * Device Screens field in *MobileAppInterfaceShowcase → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mobile_app_interface_showcase.default.primary.devices[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  devices: prismic.GroupField<
+    Simplify<MobileAppInterfaceShowcaseSliceDefaultPrimaryDevicesItem>
+  >;
+}
+
+/**
+ * Default variation for MobileAppInterfaceShowcase Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation presenting up to two overlapping phone mockups, each with a custom screenshot and an optional label.
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type MobileAppInterfaceShowcaseSliceDefault =
+  prismic.SharedSliceVariation<
+    "default",
+    Simplify<MobileAppInterfaceShowcaseSliceDefaultPrimary>,
+    never
+  >;
+
+/**
+ * Slice variation for *MobileAppInterfaceShowcase*
+ */
+type MobileAppInterfaceShowcaseSliceVariation =
+  MobileAppInterfaceShowcaseSliceDefault;
+
+/**
+ * MobileAppInterfaceShowcase Shared Slice
+ *
+ * - **API ID**: `mobile_app_interface_showcase`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type MobileAppInterfaceShowcaseSlice = prismic.SharedSlice<
+  "mobile_app_interface_showcase",
+  MobileAppInterfaceShowcaseSliceVariation
+>;
+
+/**
  * Primary content in *Projects → Default → Primary*
  */
 export interface ProjectsSliceDefaultPrimary {
@@ -2309,14 +2394,36 @@ export interface TestimonialsSliceDefaultItem {
   testimonial: prismic.RichTextField;
 
   /**
-   * Avatar field in *Testimonials → Items*
+   * Header Type field in *Testimonials → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: quotes
+   * - **API ID Path**: testimonials.items[].header_type
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  header_type: prismic.SelectField<"quotes" | "stars", "filled">;
+
+  /**
+   * Background Type field in *Testimonials → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: white
+   * - **API ID Path**: testimonials.items[].background_type
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  background_type: prismic.SelectField<"white" | "image", "filled">;
+
+  /**
+   * Background Image field in *Testimonials → Items*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.items[].avatar
+   * - **API ID Path**: testimonials.items[].background_image
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
-  avatar: prismic.ImageField<never>;
+  background_image: prismic.ImageField<never>;
 }
 
 /**
@@ -2696,6 +2803,11 @@ declare module "@prismicio/client" {
       IntroSliceDefaultPrimary,
       IntroSliceVariation,
       IntroSliceDefault,
+      MobileAppInterfaceShowcaseSlice,
+      MobileAppInterfaceShowcaseSliceDefaultPrimaryDevicesItem,
+      MobileAppInterfaceShowcaseSliceDefaultPrimary,
+      MobileAppInterfaceShowcaseSliceVariation,
+      MobileAppInterfaceShowcaseSliceDefault,
       ProjectsSlice,
       ProjectsSliceDefaultPrimary,
       ProjectsSliceDefaultItem,

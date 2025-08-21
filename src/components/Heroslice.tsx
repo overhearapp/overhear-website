@@ -54,18 +54,7 @@ const Heroslice = ({ slice, showImg = true }: any) => {
           </div>
         </div>
         
-        {/* Phone screenshot */}
-        {showImg && slice.primary.heroimg && (
-          <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
-            <PrismicNextImage 
-              className="mx-auto w-[22.875rem] max-w-full drop-shadow-xl"
-              field={slice.primary.heroimg} 
-              width={726} 
-              height={923}
-              alt=""
-            />
-          </div>
-        )}
+
       </div>
     </div>
   )

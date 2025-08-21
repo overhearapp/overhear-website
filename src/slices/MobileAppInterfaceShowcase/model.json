@@ -1,0 +1,43 @@
+{
+  "type": "SharedSlice",
+  "id": "mobile_app_interface_showcase",
+  "name": "MobileAppInterfaceShowcase",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default variation presenting up to two overlapping phone mockups, each with a custom screenshot and an optional label.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "background_color": {
+          "type": "Color",
+          "config": {
+            "label": "Background Color"
+          }
+        },
+        "devices": {
+          "type": "Group",
+          "config": {
+            "label": "Device Screens",
+            "fields": {
+              "screenshot": {
+                "type": "Image",
+                "config": {
+                  "label": "Screenshot Image"
+                }
+              },
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Screen Label"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

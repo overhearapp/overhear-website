@@ -16,6 +16,9 @@ export const components = {
   hero: dynamic(() => import("./Hero")),
   image_block: dynamic(() => import("./ImageBlock")),
   intro: dynamic(() => import("./Intro")),
+  mobile_app_interface_showcase: dynamic(
+    () => import("./MobileAppInterfaceShowcase"),
+  ),
   projects: dynamic(() => import("./Projects")),
   services: dynamic(() => import("./Services")),
   stats: dynamic(() => import("./Stats")),
