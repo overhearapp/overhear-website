@@ -33,6 +33,7 @@ const config: Config = {
       fontFamily: {
         inter: ["var(--font-inter)"],
         caveat:["var(--font-caveat)"],
+        sifonn: ["var(--font-sifonn)", "Arial Black", "sans-serif"],
       },
     },
   },

@@ -1,6 +1,7 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 
 import { Inter, Caveat } from "next/font/google";
+import localFont from 'next/font/local';
 import "./globals.css";
 import { createClient, repositoryName } from '@/prismicio';
 import { PrismicPreview } from '@prismicio/next'
@@ -13,6 +14,12 @@ const caveat = Caveat({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-caveat',
+})
+
+const sifonn = localFont({
+  src: '../fonts/SIFONN_BASIC_OUTLINE.otf',
+  variable: '--font-sifonn',
+  display: 'swap',
 })
 
 type Props = {
@@ -42,7 +49,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${caveat.variable} font-sans`}>
+      <body className={`${inter.variable} ${caveat.variable} ${sifonn.variable} font-sans`}>
         <Header />
         {children}
         <Footer />
