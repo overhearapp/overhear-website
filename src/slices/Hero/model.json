@@ -12,31 +12,32 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "heading": {
-          "type": "Text",
+        "logo_image": {
+          "type": "Image",
           "config": {
-            "label": "Heading",
-            "placeholder": ""
+            "label": "Logo Image",
+            "constraint": {},
+            "thumbnails": []
           }
         },
-        "heading_secondary": {
+        "subtitle": {
           "type": "Text",
           "config": {
-            "label": "Heading Secondary",
-            "placeholder": ""
+            "label": "Subtitle",
+            "placeholder": "Discover poetry and stories in the places they belong"
           }
         },
-        "subtext": {
+        "description": {
           "type": "Text",
           "config": {
-            "label": "Subtext",
-            "placeholder": ""
+            "label": "Description",
+            "placeholder": "Experience geolocated audio content that brings stories to life in their natural setting"
           }
         },
         "heroimg": {
           "type": "Image",
           "config": {
-            "label": "Heroimg",
+            "label": "Hero Image",
             "constraint": {},
             "thumbnails": []
           }
@@ -44,7 +45,7 @@
         "google_store": {
           "type": "Image",
           "config": {
-            "label": "Google store",
+            "label": "Google Play Store Badge",
             "constraint": {},
             "thumbnails": []
           }
@@ -52,23 +53,23 @@
         "google_app": {
           "type": "Link",
           "config": {
-            "label": "Google app",
-            "placeholder": "",
+            "label": "Google Play App Link",
+            "placeholder": "https://play.google.com/store/apps/details?id=com.overhear",
             "select": null
           }
         },
         "apple_app": {
           "type": "Link",
           "config": {
-            "label": "Apple app",
-            "placeholder": "",
+            "label": "Apple App Store Link",
+            "placeholder": "https://apps.apple.com/app/overhear",
             "select": null
           }
         },
         "apple_store": {
           "type": "Image",
           "config": {
-            "label": "Apple store",
+            "label": "Apple App Store Badge",
             "constraint": {},
             "thumbnails": []
           }
@@ -79,7 +80,7 @@
           "type": "Text",
           "config": {
             "label": "Testimonial",
-            "placeholder": ""
+            "placeholder": "User testimonial text"
           }
         }
       }

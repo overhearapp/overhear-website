@@ -1,0 +1,98 @@
+{
+  "id": "content_section",
+  "type": "SharedSlice",
+  "name": "ContentSection",
+  "description": "ContentSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": "Section Title"
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": "Section Subtitle"
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": "Section description content"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_position": {
+          "type": "Select",
+          "config": {
+            "label": "Image Position",
+            "options": [
+              "left",
+              "right",
+              "top",
+              "bottom"
+            ],
+            "default_value": "right"
+          }
+        },
+        "text_align": {
+          "type": "Select",
+          "config": {
+            "label": "Text Alignment",
+            "options": [
+              "left",
+              "center",
+              "right"
+            ],
+            "default_value": "center"
+          }
+        },
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background Color",
+            "options": [
+              "transparent",
+              "blue-900",
+              "gray-900",
+              "white"
+            ],
+            "default_value": "transparent"
+          }
+        },
+        "text_color": {
+          "type": "Select",
+          "config": {
+            "label": "Text Color",
+            "options": [
+              "white",
+              "black",
+              "gray-900"
+            ],
+            "default_value": "white"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -17,25 +17,16 @@
             "app": {
               "type": "SharedSlice"
             },
-            "benefits": {
-              "type": "SharedSlice"
-            },
-            "stats": {
-              "type": "SharedSlice"
-            },
-            "alternate_grid": {
+            "team": {
               "type": "SharedSlice"
             },
             "testimonials": {
               "type": "SharedSlice"
             },
-            "works": {
-              "type": "SharedSlice"
-            },
-            "banner": {
-              "type": "SharedSlice"
-            },
             "hero": {
+              "type": "SharedSlice"
+            },
+            "services": {
               "type": "SharedSlice"
             }
           }

@@ -1,0 +1,71 @@
+{
+  "id": "services",
+  "type": "SharedSlice",
+  "name": "Services",
+  "description": "Services",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": "Services"
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": "Explore our innovative audio delivery technology that brings stories, poetry and oral histories to life through geolocation and/or QR codes."
+          }
+        }
+      },
+      "items": {
+        "service_title": {
+          "type": "Text",
+          "config": {
+            "label": "Service Title",
+            "placeholder": "Geo-Location & QR"
+          }
+        },
+        "service_description": {
+          "type": "Text",
+          "config": {
+            "label": "Service Description",
+            "placeholder": "Collect audio on location using geolocation or QR codes. Explore your surroundings to discover audio linked to specific places."
+          }
+        },
+        "service_image": {
+          "type": "Image",
+          "config": {
+            "label": "Service Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "service_icon": {
+          "type": "Text",
+          "config": {
+            "label": "Service Icon (emoji)",
+            "placeholder": "🎧"
+          }
+        },
+        "service_secondary_image": {
+          "type": "Image",
+          "config": {
+            "label": "Service Secondary Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      }
+    }
+  ]
+}

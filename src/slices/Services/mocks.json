@@ -1,0 +1,112 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"subtitle": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Explore our innovative audio delivery technology that brings stories, poetry and oral histories to life through geolocation and/or QR codes. Immerse listeners in sequential collection, branching narratives, and transit collection experiences."
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Services"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"service_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Geo-Loaction & QR"
+						}
+					],
+					[
+						"service_image",
+						{
+							"__TYPE__": "ImageContent",
+							"provider": "imgix",
+							"url": "https://images.unsplash.com/photo-1629122998682-9f01c0fa89ed?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw4fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3NTU2NjYzNTF8MA&ixlib=rb-4.1.0&q=85",
+							"alt": "orange fruits on green leaves",
+							"origin": {
+								"id": "_ANDM3OI4gE",
+								"url": "https://images.unsplash.com/photo-1629122998682-9f01c0fa89ed?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw4fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3NTU2NjYzNTF8MA&ixlib=rb-4.1.0&q=85",
+								"width": 3024,
+								"height": 4032
+							},
+							"width": 3024,
+							"height": 4032,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"thumbnails": {}
+						}
+					],
+					[
+						"service_description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Collect audio on location using geolocation or QR codes. Explore your surroundings to discover audio linked to specific places and quickly access exclusive clips using the OVERHEAR app."
+						}
+					]
+				],
+				"key": "271cff17-e6fa-4d0f-ad4a-692c3725c17c"
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"service_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Sequential & Branching Audio"
+						}
+					],
+					[
+						"service_description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Projects can provide listeners with a sequential audio journey or a choose-your-own-adventure style branching narravite through a location."
+						}
+					]
+				],
+				"key": "efbc2cc9-6eb9-4498-a234-d606108bbdf8"
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"service_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Transit Audio"
+						}
+					],
+					[
+						"service_description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Transit projects let listeners collect episodic audio as they travel between any two pins in a project, great for regular commuters using public transport. "
+						}
+					]
+				],
+				"key": "f3c89647-f3fb-48bc-99f2-c5240ae709a1"
+			}
+		]
+	}
+]

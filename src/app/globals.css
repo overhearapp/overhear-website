@@ -1,7 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Sifonn+Outline&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
  
- body { 
-   @apply bg-primary text-white
- }
+body { 
+  @apply bg-primary text-white
+}
+
+/* Custom font for OVERHEAR branding */
+.font-sifonn {
+  font-family: 'Sifonn Outline', 'Arial Black', sans-serif;
+}
+
+/* Custom background color for the new design */
+.bg-overhear-blue {
+  background-color: #285092;
+}

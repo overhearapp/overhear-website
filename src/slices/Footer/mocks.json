@@ -1,0 +1,106 @@
+[
+  {
+    "name": "Default",
+    "primary": {
+      "copyright_text": "© 2024 Overhear Ltd. All rights reserved."
+    },
+    "items": [
+      {
+        "section_title": "About",
+        "link_text": "Our Story",
+        "link": {
+          "link_type": "Web",
+          "url": "/about"
+        }
+      },
+      {
+        "section_title": "About",
+        "link_text": "Mission",
+        "link": {
+          "link_type": "Web",
+          "url": "/about#mission"
+        }
+      },
+      {
+        "section_title": "About",
+        "link_text": "Team",
+        "link": {
+          "link_type": "Web",
+          "url": "/team"
+        }
+      },
+      {
+        "section_title": "Services",
+        "link_text": "Geolocated Audio",
+        "link": {
+          "link_type": "Web",
+          "url": "/services#audio"
+        }
+      },
+      {
+        "section_title": "Services",
+        "link_text": "Workshops",
+        "link": {
+          "link_type": "Web",
+          "url": "/services#workshops"
+        }
+      },
+      {
+        "section_title": "Services",
+        "link_text": "Consulting",
+        "link": {
+          "link_type": "Web",
+          "url": "/services#consulting"
+        }
+      },
+      {
+        "section_title": "Resources",
+        "link_text": "Blog",
+        "link": {
+          "link_type": "Web",
+          "url": "/blog"
+        }
+      },
+      {
+        "section_title": "Resources",
+        "link_text": "Help Centre",
+        "link": {
+          "link_type": "Web",
+          "url": "/help"
+        }
+      },
+      {
+        "section_title": "Resources",
+        "link_text": "Documentation",
+        "link": {
+          "link_type": "Web",
+          "url": "/docs"
+        }
+      },
+      {
+        "section_title": "Connect",
+        "link_text": "Contact",
+        "link": {
+          "link_type": "Web",
+          "url": "/contact"
+        }
+      },
+      {
+        "section_title": "Connect",
+        "link_text": "Partnerships",
+        "link": {
+          "link_type": "Web",
+          "url": "/partnerships"
+        }
+      },
+      {
+        "section_title": "Connect",
+        "link_text": "Community",
+        "link": {
+          "link_type": "Web",
+          "url": "/community"
+        }
+      }
+    ]
+  }
+]

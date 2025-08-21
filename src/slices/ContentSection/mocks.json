@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Default",
+    "primary": {
+      "title": "Geolocated Audio Experiences",
+      "subtitle": "Discover poetry and stories in the places they belong",
+      "description": "Experience audio content that comes to life in its natural setting. Our geolocated audio technology allows you to discover stories, poetry, and oral histories exactly where they belong.",
+      "image_position": "right",
+      "text_align": "center",
+      "background_color": "transparent",
+      "text_color": "white"
+    },
+    "items": []
+  }
+]
