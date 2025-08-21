@@ -17,6 +17,11 @@ const nextConfig = {
                 hostname: 'images.prismic.io',
 
             },
+            {
+                protocol: 'https',
+                hostname: 'storage.googleapis.com',
+
+            },
         ],
     },
 };

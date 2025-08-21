@@ -44,25 +44,15 @@ const processImageUrl = (imagePath: string): string => {
 
 export async function fetchArtists(): Promise<Artist[]> {
   try {
-    const authorsRef = collection(db, 'Authors');
+    const snapshot = await getDocs(collection(db, 'Authors'));
     
-    // Query for authors, ordered by order field if it exists
-    const q = query(
-      authorsRef,
-      orderBy('order', 'asc'),
-      limit(50) // Limit to 50 authors
-    );
-    
-    const querySnapshot = await getDocs(q);
-    const artists: Artist[] = [];
-    
-    querySnapshot.forEach((doc) => {
+    const artists: Artist[] = snapshot.docs.map(doc => {
       const data = doc.data();
       const image = data.image || '';
       
       // Only include authors with valid images
       if (image && isValidImage(image)) {
-        artists.push({
+        return {
           id: doc.id,
           name: data.name || '',
           title: data.title || '',
@@ -72,17 +62,15 @@ export async function fetchArtists(): Promise<Artist[]> {
           order: data.order || 0,
           active: data.active !== false, // Default to true if not specified
           authorKey: data.authorKey || doc.id
-        });
+        };
+      } else {
+        return null; // Will be filtered out
       }
-    });
+    }).filter(Boolean) as Artist[]; // Remove null values
     
-    // Filter out inactive authors and sort by order
-    return artists
-      .filter(artist => artist.active)
-      .sort((a, b) => (a.order || 0) - (b.order || 0));
+    return artists;
     
   } catch (error) {
-    console.error('Error fetching authors from Firestore:', error);
     throw new Error('Failed to fetch authors');
   }
 }

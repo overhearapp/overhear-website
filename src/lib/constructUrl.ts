@@ -1,17 +1,24 @@
 // Utility function to construct Firebase Storage URLs
-export function constructUrl(imagePath: string): string {
+// Base URL for Firebase storage
+const FIREBASE_STORAGE_BASE_URL = `https://firebasestorage.googleapis.com/v0/b/overhear-2.appspot.com/o/`;
+
+/**
+ * Constructs a full URL for a file stored in Firebase storage.
+ * @param {string} filePath - The path of the file in Firebase storage.
+ * @param {boolean} includeMediaParam - Whether to include the media query parameter.
+ * @returns {string} The full URL of the file.
+ */
+export function constructUrl(filePath: string, includeMediaParam: boolean = true): string {
   // If it's already a full URL, return as is
-  if (imagePath.startsWith('http')) {
-    return imagePath;
+  if (filePath.startsWith('http')) {
+    return filePath;
   }
   
   // If it's a Firebase Storage path, construct proper URL
-  if (imagePath.startsWith('images/') || imagePath.startsWith('author_images/')) {
-    // Replace with your actual Firebase Storage bucket
-    const bucket = process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || 'your-bucket-name';
-    return `https://storage.googleapis.com/${bucket}/${imagePath}`;
+  if (filePath.startsWith('images/') || filePath.startsWith('author_images/')) {
+    return `${FIREBASE_STORAGE_BASE_URL}${encodeURIComponent(filePath)}${includeMediaParam ? '?alt=media' : ''}`;
   }
   
   // For local assets, return as is
-  return imagePath;
+  return filePath;
 }

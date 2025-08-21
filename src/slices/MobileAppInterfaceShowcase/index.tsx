@@ -47,7 +47,7 @@ const MobileAppInterfaceShowcase: FC<MobileAppInterfaceShowcaseProps> = ({
                         ? "w-32 h-[250px] sm:w-40 sm:h-[315px] lg:w-52 lg:h-[410px]" 
                         : "w-40 h-[315px] sm:w-48 sm:h-[375px] lg:w-64 lg:h-[500px]"
                     } object-contain transition-transform duration-300 group-hover:scale-105 opacity-100`}
-                    alt={device.label || "App screenshot"}
+                    alt=""
                   />
                 )}
                 

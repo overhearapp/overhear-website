@@ -3,6 +3,35 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
+// Component to test if an image loads successfully
+const ImageWithFallback: React.FC<{ 
+  src: string; 
+  alt: string; 
+  className: string;
+  onImageError: () => void;
+}> = ({ src, alt, className, onImageError }) => {
+  const [imageError, setImageError] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  if (imageError) {
+    return null; // Don't render anything if image fails to load
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      onLoad={() => setImageLoaded(true)}
+      onError={() => {
+        setImageError(true);
+        onImageError(); // Notify parent that image failed
+      }}
+      style={{ display: imageLoaded ? 'block' : 'none' }}
+    />
+  );
+};
+
 interface Artist {
   id: string;
   name: string;
@@ -26,16 +55,19 @@ const ArtistGallery: React.FC<ArtistGalleryProps> = ({
   const [artists, setArtists] = useState<Artist[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     const fetchArtists = async () => {
       try {
         const response = await fetch('/api/artists');
+        
         if (!response.ok) {
           throw new Error('Failed to fetch artists');
         }
+        
         const data = await response.json();
-        setArtists(data.artists);
+        setArtists(data.artists || []);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'An error occurred');
       } finally {
@@ -96,53 +128,106 @@ const ArtistGallery: React.FC<ArtistGalleryProps> = ({
           <p className="text-white/80 text-lg max-w-2xl mx-auto">{subtitle}</p>
         </div>
 
-        {/* Artists Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {artists.map((artist) => (
-            <div 
-              key={artist.id} 
-              className="group bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
-            >
-              {/* Artist Image */}
-              <div className="relative mb-4">
-                <div className="w-full h-64 relative overflow-hidden rounded-lg">
-                  <Image
-                    src={artist.image}
-                    alt={artist.name}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
-              </div>
+        {/* Debug Info */}
+        {artists.length === 0 && (
+          <div className="text-center mb-8">
+            <p className="text-white/60 text-sm">No artists found. Debug info:</p>
+            <p className="text-white/60 text-xs">Artists array length: {artists.length}</p>
+            <p className="text-white/60 text-xs">Loading: {loading.toString()}</p>
+            <p className="text-white/60 text-xs">Error: {error || 'none'}</p>
+          </div>
+        )}
 
-              {/* Artist Info */}
-              <div className="text-center">
-                <h3 className="text-xl font-semibold text-white mb-1">
-                  {artist.name}
-                </h3>
-                <p className="text-white/80 text-sm mb-3">
-                  {artist.title}
-                </p>
-                <p className="text-white/70 text-sm leading-relaxed mb-4">
-                  {artist.description}
-                </p>
+        {/* Artists Grid - 2 Rows with Horizontal Scroll */}
+        <div className="-mx-6 lg:-mx-[calc((100vw-70rem)/2)]">
+          {/* Filter artists with images */}
+          {(() => {
+            const handleImageError = (artistId: string) => {
+              setFailedImages(prev => new Set(prev).add(artistId));
+            };
+            
+            const artistsWithImages = artists.filter(artist => artist.image && !failedImages.has(artist.id));
+            const firstRow = artistsWithImages.slice(0, Math.ceil(artistsWithImages.length / 2));
+            const secondRow = artistsWithImages.slice(Math.ceil(artistsWithImages.length / 2));
+            
+            return (
+              <>
+                {/* First row */}
+                <div className="flex gap-6 overflow-hidden pb-4 px-6 lg:px-[calc((100vw-80rem)/2+1.5rem)]">
+                  <div className="flex gap-6 animate-scroll">
+                    {firstRow.map((artist) => (
+                      <div 
+                        key={artist.id} 
+                        className="group flex-shrink-0"
+                      >
+                        <div className="w-48 h-48 relative overflow-hidden rounded-lg">
+                          <ImageWithFallback
+                            src={artist.image}
+                            alt={artist.name}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                            onImageError={() => handleImageError(artist.id)}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                    {/* Duplicate for seamless loop */}
+                    {firstRow.map((artist) => (
+                      <div 
+                        key={`${artist.id}-duplicate`} 
+                        className="group flex-shrink-0"
+                      >
+                        <div className="w-48 h-48 relative overflow-hidden rounded-lg">
+                          <ImageWithFallback
+                            src={artist.image}
+                            alt={artist.name}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                            onImageError={() => handleImageError(artist.id)}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
                 
-                {/* Portfolio Link */}
-                {artist.portfolio && (
-                  <a
-                    href={artist.portfolio}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200"
-                  >
-                    View Portfolio
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
+                {/* Second row */}
+                <div className="flex gap-6 overflow-hidden pb-4 px-6 lg:px-[calc((100vw-80rem)/2+1.5rem)]">
+                  <div className="flex gap-6 animate-scroll-reverse">
+                    {secondRow.map((artist) => (
+                      <div 
+                        key={artist.id} 
+                        className="group flex-shrink-0"
+                      >
+                        <div className="w-48 h-48 relative overflow-hidden rounded-lg">
+                          <ImageWithFallback
+                            src={artist.image}
+                            alt={artist.name}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                            onImageError={() => handleImageError(artist.id)}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                    {/* Duplicate for seamless loop */}
+                    {secondRow.map((artist) => (
+                      <div 
+                        key={`${artist.id}-duplicate`} 
+                        className="group flex-shrink-0"
+                      >
+                        <div className="w-48 h-48 relative overflow-hidden rounded-lg">
+                          <ImageWithFallback
+                            src={artist.image}
+                            alt={artist.name}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                            onImageError={() => handleImageError(artist.id)}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </>
+            );
+          })()}
         </div>
       </div>
     </section>
